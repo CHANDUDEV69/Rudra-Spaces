@@ -1,11 +1,12 @@
 class Header extends HTMLElement {
      constructor() {
-     var compStatusIsReady = false;
           super();
-
-          
           const header = document.querySelector("header-component");
-          // header navigation loader
+          // step3 brochure button
+          const downloadBrouchreBtn = () =>{
+               
+          }
+          // step2 header navigation loader
           const HeaderNavigationLoader = () =>{
                const navMenu = document.createElement("nav");
                const navLinks = document.createElement("ul");
@@ -27,9 +28,7 @@ class Header extends HTMLElement {
                header.style.justifyContent = "space-between";
                header.style.gap = "12px"
           }
-
-
-          // fetch logo image
+          // step1 fetch logo image
           async function logoImageLoader(){
                const logoWrappper = document.createElement('div');
                logoWrappper.classList.add('logo-wrapper');
@@ -46,12 +45,8 @@ class Header extends HTMLElement {
                     header.appendChild(logoWrappper);
                          HeaderNavigationLoader();
                     }
-               }
-     
-          
+          }
           logoImageLoader();
-
-         
      }
 }
           customElements.define('header-component', Header);
