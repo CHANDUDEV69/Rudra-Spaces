@@ -34,8 +34,6 @@ class Header extends HTMLElement {
                const logoWrappper = document.createElement('div');
                logoWrappper.classList.add('logo-wrapper');
                logoWrappper.classList.add("loading");
-               // const headerPreloader = document.querySelector(".loading");
-               // headerPreloader.style.background = "red";
                const result = await fetch('../Assets/Images/logo.png');
                if(result.status == 200){
                     const logoImg = new Image();
