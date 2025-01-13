@@ -4,8 +4,34 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Home - Rudra Spaces</title>
+     <link rel="stylesheet" href="Assets/CSS/style.css">
+     <link rel="stylesheet" href="Assets/CSS/header.css">
 </head>
 <body>
-     
-</body>
+     <header id="header">
+          <div class="preLoadSkeleton">
+               <span></span>
+          </div>
+     </header>
+     <div class="test"></div>
+     <!-- <script type="module" src="Assets/Js/header.js"></script> -->
+      <script>
+          async function HeaderLoader(){
+               let response = await fetch("Assets/js/header.js");
+               document.querySelector("#header").height = 0 + "px";
+               document.querySelector("#header").style.opacity = 0;
+               document.querySelector("#header").style.transtion = 0.6 + "s";
+               if(response.status == 200){
+                    const script = document.createElement("script");
+                    script.src = response.url;
+                    script.type = "module";
+                    document.body.appendChild(script);
+                    document.querySelector("#header").height = "auto";
+                    document.querySelector("#header").style.opacity = 1;
+               }
+          
+          } 
+          HeaderLoader();
+      </script>
+</body> 
 </html>
