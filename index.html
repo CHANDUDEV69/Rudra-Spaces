@@ -5,7 +5,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Home - Rudra Spaces</title>
      <link rel="stylesheet" href="Assets/CSS/style.css">
-     <link rel="stylesheet" href="Assets/CSS/header.css">
+     <link rel="stylesheet" href="Assets/CSS/header.css" media="screen and (min-width: 768px)">
 </head>
 <body>
      <header id="header">
@@ -13,9 +13,9 @@
                <span></span>
           </div>
      </header>
-     <div class="test"></div>
-     <!-- <script type="module" src="Assets/Js/header.js"></script> -->
+     <!-- <meter id="loadingMeter" min="0" max="100" value="0" style=" width: 120px;margin-left: 45%;margin-top: 12%;">0</meter> -->
       <script>
+          // Header
           async function HeaderLoader(){
                let response = await fetch("Assets/js/header.js");
                document.querySelector("#header").height = 0 + "px";
@@ -31,6 +31,23 @@
                }
           
           } 
+          // Banner
+          async function BannerLoadHandler() {
+               
+          }
+
+
+
+
+
+
+
+
+
+
+
+
+
           HeaderLoader();
       </script>
 </body> 
